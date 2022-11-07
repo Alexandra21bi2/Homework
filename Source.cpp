@@ -1,24 +1,25 @@
 #include <iostream>
-const double PI = 3.14;
-//функция length() принимает одно целое число и одну константу в качестве параметров и возвращает число, равное длине окружности
-//значения параметра определяет функция main()
-double length(int x)
+#include <cmath>
+
+//функция square() принимает два целых числа в качестве параметров и возвращает число, равное площади прямоугольного треугольника
+//значения параметров определяет функция main()
+int square(int x, int y)
 {
-	return  2 * PI * x;
+	return  (x * y) / 2;
 }
-//функция square() принимает одно целое число и одну константу в качестве параметров и возвращает число, равное площади круга
-//значения параметра определяет функция main()
-double square(int y)
+//функция hypotenuse() принимает три целых числа в качестве параметров и возвращает число, равное величине гипотенузы
+double hypotenuse(double z, double f)
 {
-	return  PI * (y * y);
+	return sqrt(z*z + f*f);
 }
 int main()
 {
-
-	std::cout << "Enter the value of radius: "; //просим пользователя ввести число
-	int r = 0;
-	std::cin >> r; //получаем число и присваиваем его значение переменной 
-	std::cout << "The length  = " << length(r) << std::endl; //вызов функцииlength() со значениями x=r
-	std::cout << "The square = " << square(r) << std::endl; //вызов функции square() со значениями y=r
+	double a, b;
+	std::cout << "Enter the value of the cathet a: "; //просим пользователя ввести число
+	std::cin >> a; //получаем число и присваиваем его значение переменной 
+	std::cout << "Enter the value of the cathet b: "; //просим пользователя ввести число
+	std::cin >> b; //получаем число и присваиваем его значение переменной
+	std::cout << "The square = " << square(a, b) << std::endl; //вызов функции square() со значениями x=a, y=b
+	std::cout << "The hypotenuse = " << hypotenuse(a, b) << std::endl; //вызов функции hypotenuse() со значениями z=a, f=b
 	return 0;
 }
